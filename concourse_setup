@@ -1,0 +1,20 @@
+Concourse Pipeline setup
+
+1. Install visual studio code : https://code.visualstudio.com/
+2. enable bash/linux/ubuntu terminal: by default VS code terminal will be powershell
+    - open VS code
+	- open terminal cntrl+`
+	- open command palette cntrl+shift+p
+	- type- select default profile
+	- select ubuntu
+	-click on + icon on terminal window
+	- the new terminal will show ur ubuntu
+
+3. Install fly for linux
+	- download fly for linux https://<concourseURL>, botom left of page u can see version :6.7.6 and fly [icon for windows,mac and linux). Click on linux icon, fly cli will start auto downloading
+	copy fly from downloads to  /mnt/c/concourse
+	chmod +x fly
+	run sudo install fly /usr/local/bin
+	type fly --version to check
+	<systemlocalpath>/mnt/c/concourse$ fly --version
+	6.7.6
