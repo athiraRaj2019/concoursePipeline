@@ -1,0 +1,36 @@
+1. Target creation
+   I created a networkoss target(u can gv any random target name) to login to networkoss team
+   fly -t networkoss login --concourse-url=https://<concourseURL> --username=akadam599 --team-name=networkoss
+   once u click enter it will ask u to login to the concourse pipeline--> open link and login
+   once logged in, on ur terminal it will say target saved
+   SAMPLE OUTPUT:
+   
+    fly -t <someTargetNameThatUgive> login --concourse-url=https://<concourseURL> --username=<username> --team-name=<teamname>
+	
+	fly -t networkoss login --concourse-url=https://<concourseURL> --username=akadam599 --team-name=networkoss
+	logging in to team 'networkoss'
+	navigate to the concourse URL in your browser:
+
+	https://<concourseURL>/login?fly_port=65114
+
+	or enter token manually (input hidden):
+	target saved
+	
+	similarly u can do for any team like "lvv"
+	fly -t lvv login --concourse-url=https://<concourseURL> --username=akadam599 --team-name=lvv
+
+2. now from next time u can directly login to target 
+	eg: to get code of networkoss-->nwthoaandhobpatchingday3-linux-patcher pipeline
+	fly -t networkoss gp -p nwthoaandhobpatchingday3-linux-patcher
+	
+	fly -t lvv gp -p dynamic-linux-patcher
+	
+	
+3. Intercept command to get into container
+	run immediately post build to get the containers before they are deleted.
+	fly -t networkoss intercept -j dynamic-linux-patcher/ansible-concourse
+	
+	fly -t lvv intercept -j dyamic-linux-patcher/ansible-concourse
+
+4. to update code of existing pipeline
+	fly -t lvv sp -p dyamic-linux-patcher -c dynamic-patcher2.yml 
