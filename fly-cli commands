@@ -33,4 +33,5 @@
 	fly -t lvv intercept -j dyamic-linux-patcher/ansible-concourse
 
 4. to update code of existing pipeline
+	fly -t <targetName> sp -p <pipelineName> -c <Local yml file name>
 	fly -t lvv sp -p dyamic-linux-patcher -c dynamic-patcher2.yml 
